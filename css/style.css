@@ -1,0 +1,1227 @@
+/* ==================================================
+   FONTE - NUNITO
+================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+/* ==================================================
+   VARIÁVEIS DO SITE
+================================================== */
+
+:root {
+    --verde-mata: #24483A;
+    --verde-folha: #52735A;
+    --verde-claro: #A3C1A0;
+
+    --dourado: #B28A45;
+    --dourado-claro: #D1B477;
+
+    --terracota: #9A6248;
+
+    --areia: #F3EDE1;
+    --off-white: #FAF8F3;
+
+    --grafite: #292923;
+    --cinza: #6F7068;
+
+    --branco: #FFFFFF;
+
+    --sombra: 0 10px 30px rgba(36, 72, 58, 0.10);
+
+    --transicao: 0.3s ease;
+}
+
+
+/* ==================================================
+   RESET / CONFIGURAÇÕES GERAIS
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--grafite);
+    background-color: var(--off-white);
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* ==================================================
+   TIPOGRAFIA
+================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--verde-mata);
+}
+
+h1 {
+    font-size: clamp(2.5rem, 6vw, 4.8rem);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+h3 {
+    font-size: 1.35rem;
+}
+
+p {
+    color: var(--grafite);
+}
+
+strong {
+    font-weight: 700;
+}
+
+
+/* ==================================================
+   NAVBAR
+================================================== */
+
+#navbar {
+    padding: 18px 0;
+    background-color: transparent;
+    transition: var(--transicao);
+    z-index: 1000;
+}
+
+#navbar.scrolled {
+    padding: 10px 0;
+    background-color: rgba(24, 55, 44, 0.97);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+.navbar-brand {
+    font-family: "Nunito", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--branco) !important;
+    letter-spacing: 0.2px;
+}
+
+.navbar-brand span {
+    color: var(--dourado-claro);
+    margin: 0 3px;
+}
+
+.navbar-nav {
+    gap: 5px;
+}
+
+.nav-link {
+    position: relative;
+    padding: 8px 12px !important;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--branco) !important;
+    transition: var(--transicao);
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 2px;
+    height: 2px;
+    background-color: var(--dourado-claro);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: var(--transicao);
+}
+
+.nav-link:hover {
+    color: var(--dourado-claro) !important;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+.navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 7px 9px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+}
+
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero-logo {
+    max-width: 250px;
+    margin-bottom: 25px;
+    align-self: center;
+    
+}
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(
+            rgba(24, 55, 44, 0.78),
+            rgba(36, 72, 58, 0.82)
+        ),
+        url("../images/home/hero.jpg") center center / cover no-repeat;
+    color: var(--branco);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(24, 55, 44, 0.45),
+        transparent
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    padding: 120px 0 80px;
+}
+
+.hero-subtitle {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--dourado-claro);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    margin-bottom: 25px;
+    color: var(--branco);
+    font-weight: 800;
+}
+
+.hero h1 span {
+    color: var(--dourado-claro);
+}
+
+.hero p {
+    max-width: 680px;
+    margin-bottom: 35px;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 1.15rem;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+
+/* ==================================================
+   BOTÕES
+================================================== */
+
+.btn {
+    border-radius: 50px;
+    padding: 12px 25px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+    transition: var(--transicao);
+}
+
+.btn-primary {
+    border: 1px solid var(--dourado);
+    background-color: var(--dourado);
+    color: var(--branco);
+}
+
+.btn-primary:hover {
+    border-color: var(--dourado-claro);
+    background-color: var(--dourado-claro);
+    color: var(--grafite);
+    transform: translateY(-2px);
+}
+
+.btn-outline-light {
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    color: var(--branco);
+}
+
+.btn-outline-light:hover {
+    background-color: var(--branco);
+    color: var(--verde-mata);
+    transform: translateY(-2px);
+}
+
+.btn-gold {
+    background-color: var(--dourado);
+    border: 1px solid var(--dourado);
+    color: var(--branco);
+}
+
+.btn-gold:hover {
+    background-color: var(--dourado-claro);
+    border-color: var(--dourado-claro);
+    color: var(--grafite);
+    transform: translateY(-2px);
+}
+
+
+/* ==================================================
+   SEÇÕES
+================================================== */
+
+.section {
+    padding: 100px 0;
+}
+
+.section-light {
+    background-color: var(--areia);
+}
+
+.section-white {
+    background-color: var(--off-white);
+}
+
+.section-green {
+    background-color: var(--verde-mata);
+    color: var(--branco);
+}
+
+.section-heading {
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.section-heading h2 {
+    margin: 15px 0;
+}
+
+.section-heading p {
+    margin-bottom: 0;
+    color: var(--cinza);
+}
+
+.section-green .section-heading h2 {
+    color: var(--branco);
+}
+
+.section-green .section-heading p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+/* ==================================================
+   BADGES
+================================================== */
+
+.badge-custom {
+    display: inline-block;
+    padding: 6px 15px;
+    border-radius: 50px;
+    background-color: rgba(178, 138, 69, 0.12);
+    color: var(--dourado);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.badge-light-custom {
+    background-color: rgba(255, 255, 255, 0.12);
+    color: var(--dourado-claro);
+}
+
+
+/* ==================================================
+   INTRODUÇÃO
+================================================== */
+
+.intro-section {
+    padding: 90px 0;
+}
+
+.intro-text {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.intro-text h2 {
+    margin: 20px 0;
+}
+
+.intro-text p {
+    max-width: 750px;
+    margin: 12px auto;
+    color: var(--cinza);
+}
+
+
+/* ==================================================
+   NOSSA CASA
+================================================== */
+
+.about-image {
+    position: relative;
+    overflow: hidden;
+    min-height: 450px;
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+}
+
+.about-image-placeholder {
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    background-color: var(--areia);
+    border: 1px dashed rgba(82, 115, 90, 0.5);
+    border-radius: 20px;
+
+    color: var(--verde-folha);
+}
+
+.about-image-placeholder i {
+    font-size: 3rem;
+}
+
+.about-image-placeholder span {
+    font-weight: 700;
+}
+
+.about-content h2 {
+    margin: 15px 0 25px;
+}
+
+.about-content p {
+    margin-bottom: 18px;
+    color: var(--cinza);
+}
+
+
+/* ==================================================
+   VALORES
+================================================== */
+
+.section-heading.text-center {
+    text-align: center;
+}
+
+.value-card {
+    height: 100%;
+    padding: 35px 25px;
+    text-align: center;
+
+    background-color: var(--branco);
+    border: 1px solid rgba(36, 72, 58, 0.08);
+    border-radius: 18px;
+
+    box-shadow: 0 5px 20px rgba(36, 72, 58, 0.06);
+
+    transition: var(--transicao);
+}
+
+.value-card:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--sombra);
+}
+
+.value-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background-color: rgba(178, 138, 69, 0.12);
+
+    color: var(--dourado);
+    font-size: 1.7rem;
+}
+
+.value-card h3 {
+    margin-bottom: 12px;
+}
+
+.value-card p {
+    margin-bottom: 0;
+    color: var(--cinza);
+    font-size: 0.95rem;
+}
+
+
+/* ==================================================
+   NOSSA UMBANDA
+================================================== */
+
+.umbanda-card {
+    height: 100%;
+    padding: 40px 30px;
+
+    text-align: center;
+
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+
+    transition: var(--transicao);
+}
+
+.umbanda-card:hover {
+    transform: translateY(-7px);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.umbanda-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: rgba(209, 180, 119, 0.12);
+    color: var(--dourado-claro);
+
+    font-size: 1.8rem;
+}
+
+.umbanda-card h3 {
+    margin-bottom: 15px;
+    color: var(--branco);
+}
+
+.umbanda-card p {
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+
+/* ==================================================
+   DIRIGÊNCIA
+================================================== */
+
+.leadership-image {
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+}
+
+.leadership-image-placeholder {
+    min-height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    background-color: var(--areia);
+    border: 1px dashed rgba(82, 115, 90, 0.5);
+
+    color: var(--verde-folha);
+}
+
+.leadership-image-placeholder i {
+    font-size: 4rem;
+}
+
+.leadership-image-placeholder span {
+    font-weight: 700;
+}
+
+.leadership-content h2 {
+    margin: 15px 0 20px;
+}
+
+.leadership-role {
+    color: var(--dourado) !important;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.leadership-content p {
+    color: var(--cinza);
+}
+
+
+/* ==================================================
+   GALERIA
+================================================== */
+
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-bottom: 40px;
+}
+
+.gallery-filter {
+    padding: 9px 20px;
+
+    border: 1px solid rgba(36, 72, 58, 0.2);
+    border-radius: 50px;
+
+    background-color: transparent;
+    color: var(--verde-mata);
+
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: var(--transicao);
+}
+
+.gallery-filter:hover,
+.gallery-filter.active {
+    background-color: var(--verde-mata);
+    border-color: var(--verde-mata);
+    color: var(--branco);
+}
+
+.gallery-item {
+    transition: var(--transicao);
+}
+
+.gallery-item.hidden {
+    display: none;
+}
+
+.gallery-placeholder {
+    min-height: 280px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    background-color: var(--branco);
+    border: 1px dashed rgba(82, 115, 90, 0.5);
+    border-radius: 16px;
+
+    color: var(--verde-folha);
+
+    transition: var(--transicao);
+}
+
+.gallery-placeholder:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra);
+}
+
+.gallery-placeholder i {
+    font-size: 2.5rem;
+}
+
+
+/* ==================================================
+   ORIENTAÇÕES / ACCORDION
+================================================== */
+
+.accordion-custom {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.accordion-custom .accordion-item {
+    margin-bottom: 12px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(36, 72, 58, 0.1);
+    border-radius: 12px !important;
+
+    background-color: var(--branco);
+}
+
+.accordion-custom .accordion-button {
+    padding: 20px 22px;
+
+    background-color: var(--branco);
+    color: var(--verde-mata);
+
+    font-family: "Nunito", sans-serif;
+    font-weight: 800;
+
+    box-shadow: none;
+}
+
+.accordion-custom .accordion-button:not(.collapsed) {
+    background-color: var(--verde-mata);
+    color: var(--branco);
+}
+
+.accordion-custom .accordion-button:focus {
+    box-shadow: none;
+}
+
+.accordion-custom .accordion-body {
+    padding: 20px 22px;
+    color: var(--cinza);
+    background-color: var(--off-white);
+}
+
+
+/* ==================================================
+   MENSAGEM FINAL / ACOLHIMENTO
+================================================== */
+
+.charity-section {
+    padding: 90px 0;
+
+    background:
+        linear-gradient(
+            rgba(24, 55, 44, 0.96),
+            rgba(36, 72, 58, 0.96)
+        );
+}
+
+.charity-content {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.charity-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: rgba(209, 180, 119, 0.12);
+    color: var(--dourado-claro);
+
+    font-size: 1.7rem;
+}
+
+.charity-content h2 {
+    margin-bottom: 20px;
+    color: var(--branco);
+}
+
+.charity-content p {
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+
+/* ==================================================
+   CONTATO
+================================================== */
+
+.contact-card {
+    display: block;
+    height: 100%;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+
+    transition: var(--transicao);
+}
+
+.contact-card:hover {
+    transform: translateY(-7px);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.contact-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: rgba(209, 180, 119, 0.12);
+    color: var(--dourado-claro);
+
+    font-size: 1.6rem;
+}
+
+.contact-card h3 {
+    margin-bottom: 10px;
+    color: var(--branco);
+}
+
+.contact-card p {
+    min-height: 50px;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.contact-card span {
+    color: var(--dourado-claro);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.contact-card span i {
+    margin-left: 5px;
+}
+
+
+/* ==================================================
+   MAPA
+================================================== */
+
+.map-container {
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.map-placeholder {
+    min-height: 350px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    text-align: center;
+
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.map-placeholder i {
+    margin-bottom: 15px;
+    color: var(--dourado-claro);
+    font-size: 3rem;
+}
+
+.map-placeholder h3 {
+    margin-bottom: 10px;
+    color: var(--branco);
+}
+
+.map-placeholder p {
+    max-width: 550px;
+    margin-bottom: 25px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+.footer {
+    padding: 70px 0 25px;
+    background-color: #162F26;
+    color: var(--branco);
+}
+
+.footer-brand h2 {
+    margin-bottom: 15px;
+    color: var(--branco);
+    font-size: 1.6rem;
+}
+
+.footer-brand h2 span {
+    color: var(--dourado-claro);
+}
+
+.footer-brand p {
+    max-width: 450px;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.footer h3 {
+    margin-bottom: 20px;
+    color: var(--branco);
+    font-size: 1.1rem;
+}
+
+.footer-links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.65);
+    transition: var(--transicao);
+}
+
+.footer-links a:hover {
+    color: var(--dourado-claro);
+    padding-left: 4px;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.social-link {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+
+    color: var(--branco);
+
+    transition: var(--transicao);
+}
+
+.social-link:hover {
+    background-color: var(--dourado);
+    border-color: var(--dourado);
+    color: var(--branco);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    margin-top: 50px;
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+}
+
+.footer-bottom a {
+    color: var(--dourado-claro);
+    font-weight: 700;
+}
+
+
+/* ==================================================
+   WHATSAPP FLUTUANTE
+================================================== */
+
+.whatsapp-float {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #25D366;
+    color: var(--branco);
+
+    font-size: 1.7rem;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+    z-index: 999;
+
+    transition: var(--transicao);
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.08);
+    color: var(--branco);
+}
+
+
+/* ==================================================
+   BOTÃO VOLTAR AO TOPO
+================================================== */
+
+.back-to-top {
+    position: fixed;
+    right: 25px;
+    bottom: 95px;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 50%;
+
+    background-color: var(--dourado);
+    color: var(--branco);
+
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(10px);
+
+    transition: var(--transicao);
+
+    z-index: 998;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background-color: var(--dourado-claro);
+    color: var(--grafite);
+}
+
+
+/* ==================================================
+   RESPONSIVIDADE
+================================================== */
+
+@media (max-width: 991px) {
+
+    #navbar {
+        background-color: rgba(24, 55, 44, 0.97);
+    }
+
+    .navbar-nav {
+        padding-top: 15px;
+        padding-bottom: 10px;
+    }
+
+    .nav-link {
+        padding: 10px 0 !important;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .hero-content {
+        padding-top: 150px;
+    }
+
+    .section {
+        padding: 80px 0;
+    }
+
+    .about-image-placeholder {
+        min-height: 380px;
+    }
+
+    .leadership-image-placeholder {
+        min-height: 400px;
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    .hero {
+        min-height: 90vh;
+    }
+
+    .hero-content {
+        padding: 140px 0 70px;
+        text-align: center;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .intro-section {
+        padding: 70px 0;
+    }
+
+    .about-image-placeholder {
+        min-height: 320px;
+    }
+
+    .leadership-image-placeholder {
+        min-height: 350px;
+    }
+
+    .gallery-placeholder {
+        min-height: 240px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .navbar-brand {
+        max-width: 220px;
+        font-size: 1rem;
+        line-height: 1.3;
+    }
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.8rem;
+        letter-spacing: 1.5px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .gallery-filters {
+        gap: 7px;
+    }
+
+    .gallery-filter {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+
+    .whatsapp-float {
+        right: 18px;
+        bottom: 18px;
+        width: 53px;
+        height: 53px;
+    }
+
+    .back-to-top {
+        right: 18px;
+        bottom: 82px;
+        width: 42px;
+        height: 42px;
+    }
+}
+
+
+/* ==================================================
+   ACESSIBILIDADE
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
