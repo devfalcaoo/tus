@@ -1,34 +1,40 @@
 /* ==================================================
-   FONTE - NUNITO
+   FONTES — FRAUNCES (títulos) + NUNITO (texto)
 ================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Nunito:ital,wght@0,400..800;1,400..800&display=swap');
 
 
 /* ==================================================
-   VARIÁVEIS DO SITE
+   VARIÁVEIS DO SITE — marrom, verde, branco, preto e dourado
 ================================================== */
 
 :root {
-    --verde-mata: #24483A;
-    --verde-folha: #52735A;
-    --verde-claro: #A3C1A0;
+    /* marrom — base terrosa da casa */
+    --marrom-escuro: #2B1B12;
+    --marrom: #6B3F26;
+    --marrom-claro: #A9805A;
 
-    --dourado: #B28A45;
-    --dourado-claro: #D1B477;
+    /* verde — mata, folha */
+    --verde-mata: #26402F;
+    --verde-folha: #4C6B4F;
+    --verde-claro: #A9C2A6;
 
-    --terracota: #9A6248;
+    /* dourado — o brilho sagrado */
+    --dourado: #B7873A;
+    --dourado-claro: #E2C077;
 
-    --areia: #F3EDE1;
-    --off-white: #FAF8F3;
+    /* preto — profundidade */
+    --preto: #171009;
 
-    --grafite: #292923;
-    --cinza: #6F7068;
-
+    /* neutros quentes */
+    --areia: #F3E9D8;
+    --off-white: #FBF6EC;
+    --grafite: #2A2019;
+    --cinza: #7C6B5B;
     --branco: #FFFFFF;
 
-    --sombra: 0 10px 30px rgba(36, 72, 58, 0.10);
-
+    --sombra: 0 12px 32px rgba(23, 16, 9, 0.16);
     --transicao: 0.3s ease;
 }
 
@@ -51,7 +57,7 @@ html {
 body {
     font-family: "Nunito", sans-serif;
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 1.75;
     color: var(--grafite);
     background-color: var(--off-white);
     overflow-x: hidden;
@@ -72,6 +78,11 @@ a {
     -webkit-tap-highlight-color: transparent;
 }
 
+::selection {
+    background-color: var(--dourado);
+    color: var(--branco);
+}
+
 
 /* ==================================================
    TIPOGRAFIA
@@ -83,22 +94,25 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Nunito", sans-serif;
-    font-weight: 700;
-    line-height: 1.2;
-    color: var(--verde-mata);
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    line-height: 1.18;
+    color: var(--marrom-escuro);
 }
 
 h1 {
-    font-size: clamp(2.5rem, 6vw, 4.8rem);
+    font-size: clamp(2.4rem, 5.6vw, 4.4rem);
+    font-weight: 500;
 }
 
 h2 {
-    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-size: clamp(1.9rem, 3.6vw, 2.85rem);
 }
 
 h3 {
-    font-size: 1.35rem;
+    font-family: "Fraunces", serif;
+    font-size: 1.3rem;
+    font-weight: 600;
 }
 
 p {
@@ -107,6 +121,7 @@ p {
 
 strong {
     font-weight: 700;
+    color: var(--marrom-escuro);
 }
 
 
@@ -115,33 +130,34 @@ strong {
 ================================================== */
 
 #navbar {
-    padding: 18px 0;
+    padding: 20px 0;
     background-color: transparent;
     transition: var(--transicao);
     z-index: 1000;
 }
 
 #navbar.scrolled {
-    padding: 10px 0;
-    background-color: rgba(24, 55, 44, 0.97);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    padding: 12px 0;
+    background-color: rgba(23, 16, 9, 0.95);
+    box-shadow: 0 5px 24px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-brand {
-    font-family: "Nunito", sans-serif;
-    font-size: 1.2rem;
-    font-weight: 800;
+    font-family: "Fraunces", serif;
+    font-size: 1.25rem;
+    font-weight: 600;
     color: var(--branco) !important;
     letter-spacing: 0.2px;
 }
 
 .navbar-brand span {
     color: var(--dourado-claro);
-    margin: 0 3px;
+    margin: 0 4px;
+    font-style: italic;
 }
 
 .navbar-nav {
-    gap: 5px;
+    gap: 4px;
 }
 
 .nav-link {
@@ -149,7 +165,7 @@ strong {
     padding: 8px 12px !important;
     font-size: 0.95rem;
     font-weight: 600;
-    color: var(--branco) !important;
+    color: rgba(255, 255, 255, 0.9) !important;
     transition: var(--transicao);
 }
 
@@ -159,11 +175,11 @@ strong {
     left: 12px;
     right: 12px;
     bottom: 2px;
-    height: 2px;
+    height: 1px;
     background-color: var(--dourado-claro);
     transform: scaleX(0);
-    transform-origin: center;
-    transition: var(--transicao);
+    transform-origin: left;
+    transition: transform 0.35s ease;
 }
 
 .nav-link:hover {
@@ -193,10 +209,10 @@ strong {
 ================================================== */
 
 .hero-logo {
-    max-width: 250px;
-    margin-bottom: 25px;
+    max-width: 180px;
+    margin-bottom: 28px;
     align-self: center;
-    
+    filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.35));
 }
 
 .hero {
@@ -204,13 +220,26 @@ strong {
     min-height: 100vh;
     display: flex;
     align-items: center;
+    overflow: hidden;
     background:
-        linear-gradient(
-            rgba(24, 55, 44, 0.78),
-            rgba(36, 72, 58, 0.82)
-        ),
-        url("../images/home/hero.jpg") center center / cover no-repeat;
+        radial-gradient(ellipse at 20% 15%, rgba(183, 135, 58, 0.16), transparent 55%),
+        linear-gradient(160deg, var(--preto) 0%, var(--marrom-escuro) 46%, var(--verde-mata) 100%);
     color: var(--branco);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        repeating-linear-gradient(
+            115deg,
+            rgba(226, 192, 119, 0.035) 0px,
+            rgba(226, 192, 119, 0.035) 1px,
+            transparent 1px,
+            transparent 68px
+        );
+    pointer-events: none;
 }
 
 .hero-overlay {
@@ -218,8 +247,8 @@ strong {
     inset: 0;
     background: linear-gradient(
         90deg,
-        rgba(24, 55, 44, 0.45),
-        transparent
+        rgba(23, 16, 9, 0.55),
+        transparent 65%
     );
 }
 
@@ -232,28 +261,41 @@ strong {
 
 .hero-subtitle {
     display: inline-block;
-    margin-bottom: 20px;
+    position: relative;
+    margin-bottom: 22px;
+    padding-left: 22px;
     color: var(--dourado-claro);
     font-size: 1rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 0.4px;
+}
+
+.hero-subtitle::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 14px;
+    height: 1px;
+    background-color: var(--dourado-claro);
+    transform: translateY(-50%);
 }
 
 .hero h1 {
     margin-bottom: 25px;
     color: var(--branco);
-    font-weight: 800;
+    font-weight: 500;
 }
 
 .hero h1 span {
     color: var(--dourado-claro);
+    font-style: italic;
 }
 
 .hero p {
     max-width: 680px;
     margin-bottom: 35px;
-    color: rgba(255, 255, 255, 0.92);
+    color: rgba(255, 255, 255, 0.85);
     font-size: 1.15rem;
 }
 
@@ -269,48 +311,51 @@ strong {
 ================================================== */
 
 .btn {
-    border-radius: 50px;
-    padding: 12px 25px;
+    border-radius: 4px;
+    padding: 13px 28px;
     font-family: "Nunito", sans-serif;
     font-weight: 700;
+    letter-spacing: 0.2px;
     transition: var(--transicao);
 }
 
 .btn-primary {
     border: 1px solid var(--dourado);
-    background-color: var(--dourado);
-    color: var(--branco);
+    background: linear-gradient(180deg, var(--dourado-claro), var(--dourado));
+    color: var(--marrom-escuro);
 }
 
 .btn-primary:hover {
     border-color: var(--dourado-claro);
-    background-color: var(--dourado-claro);
-    color: var(--grafite);
+    background: var(--dourado-claro);
+    color: var(--marrom-escuro);
     transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(183, 135, 58, 0.35);
 }
 
 .btn-outline-light {
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.55);
     color: var(--branco);
 }
 
 .btn-outline-light:hover {
-    background-color: var(--branco);
-    color: var(--verde-mata);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--dourado-claro);
+    color: var(--dourado-claro);
     transform: translateY(-2px);
 }
 
 .btn-gold {
-    background-color: var(--dourado);
+    background: linear-gradient(180deg, var(--dourado-claro), var(--dourado));
     border: 1px solid var(--dourado);
-    color: var(--branco);
+    color: var(--marrom-escuro);
 }
 
 .btn-gold:hover {
-    background-color: var(--dourado-claro);
+    background: var(--dourado-claro);
     border-color: var(--dourado-claro);
-    color: var(--grafite);
     transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(183, 135, 58, 0.3);
 }
 
 
@@ -319,7 +364,7 @@ strong {
 ================================================== */
 
 .section {
-    padding: 100px 0;
+    padding: 110px 0;
 }
 
 .section-light {
@@ -331,7 +376,8 @@ strong {
 }
 
 .section-green {
-    background-color: var(--verde-mata);
+    position: relative;
+    background: linear-gradient(165deg, var(--verde-mata) 0%, #1E3327 100%);
     color: var(--branco);
 }
 
@@ -341,7 +387,7 @@ strong {
 }
 
 .section-heading h2 {
-    margin: 15px 0;
+    margin: 14px 0;
 }
 
 .section-heading p {
@@ -354,7 +400,7 @@ strong {
 }
 
 .section-green .section-heading p {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.75);
 }
 
 
@@ -363,20 +409,31 @@ strong {
 ================================================== */
 
 .badge-custom {
-    display: inline-block;
-    padding: 6px 15px;
-    border-radius: 50px;
-    background-color: rgba(178, 138, 69, 0.12);
-    color: var(--dourado);
-    font-size: 0.8rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 2px;
+    color: var(--marrom);
+    font-family: "Nunito", sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+.badge-custom::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--dourado);
+    flex-shrink: 0;
 }
 
 .badge-light-custom {
-    background-color: rgba(255, 255, 255, 0.12);
     color: var(--dourado-claro);
+}
+
+.badge-light-custom::before {
+    background-color: var(--dourado-claro);
 }
 
 
@@ -385,7 +442,8 @@ strong {
 ================================================== */
 
 .intro-section {
-    padding: 90px 0;
+    padding: 95px 0 75px;
+    background-color: var(--off-white);
 }
 
 .intro-text {
@@ -395,7 +453,7 @@ strong {
 }
 
 .intro-text h2 {
-    margin: 20px 0;
+    margin: 18px 0;
 }
 
 .intro-text p {
@@ -413,8 +471,18 @@ strong {
     position: relative;
     overflow: hidden;
     min-height: 450px;
-    border-radius: 20px;
+    border-radius: 6px;
     box-shadow: var(--sombra);
+}
+
+.about-image::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(226, 192, 119, 0.5);
+    border-radius: 3px;
+    z-index: 2;
+    pointer-events: none;
 }
 
 .about-image-placeholder {
@@ -426,10 +494,10 @@ strong {
     gap: 10px;
 
     background-color: var(--areia);
-    border: 1px dashed rgba(82, 115, 90, 0.5);
-    border-radius: 20px;
+    border: 1px dashed rgba(107, 63, 38, 0.4);
+    border-radius: 6px;
 
-    color: var(--verde-folha);
+    color: var(--marrom);
 }
 
 .about-image-placeholder i {
@@ -459,38 +527,38 @@ strong {
 }
 
 .value-card {
+    position: relative;
     height: 100%;
-    padding: 35px 25px;
+    padding: 38px 26px 32px;
     text-align: center;
 
     background-color: var(--branco);
-    border: 1px solid rgba(36, 72, 58, 0.08);
-    border-radius: 18px;
+    border: 1px solid rgba(42, 32, 25, 0.08);
+    border-bottom: 3px solid transparent;
+    border-radius: 4px;
 
-    box-shadow: 0 5px 20px rgba(36, 72, 58, 0.06);
-
-    transition: var(--transicao);
+    transition: border-color var(--transicao), transform var(--transicao);
 }
 
 .value-card:hover {
-    transform: translateY(-7px);
-    box-shadow: var(--sombra);
+    border-bottom-color: var(--dourado);
+    transform: translateY(-4px);
 }
 
 .value-icon {
-    width: 65px;
-    height: 65px;
-    margin: 0 auto 20px;
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 22px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     border-radius: 50%;
-    background-color: rgba(178, 138, 69, 0.12);
+    border: 1px solid var(--dourado);
 
     color: var(--dourado);
-    font-size: 1.7rem;
+    font-size: 1.4rem;
 }
 
 .value-card h3 {
@@ -510,47 +578,46 @@ strong {
 
 .umbanda-card {
     height: 100%;
-    padding: 40px 30px;
+    padding: 42px 32px;
 
     text-align: center;
 
-    background-color: rgba(255, 255, 255, 0.07);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 18px;
+    background-color: rgba(255, 255, 255, 0.04);
+    border-top: 1px solid rgba(226, 192, 119, 0.45);
+    border-radius: 0 0 6px 6px;
 
-    transition: var(--transicao);
+    transition: background-color var(--transicao);
 }
 
 .umbanda-card:hover {
-    transform: translateY(-7px);
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.07);
 }
 
 .umbanda-icon {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto 20px;
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 22px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     border-radius: 50%;
+    border: 1px solid var(--dourado-claro);
 
-    background-color: rgba(209, 180, 119, 0.12);
     color: var(--dourado-claro);
-
-    font-size: 1.8rem;
+    font-size: 1.55rem;
 }
 
 .umbanda-card h3 {
     margin-bottom: 15px;
     color: var(--branco);
+    font-weight: 600;
 }
 
 .umbanda-card p {
     margin-bottom: 0;
-    color: rgba(255, 255, 255, 0.78);
+    color: rgba(255, 255, 255, 0.72);
 }
 
 
@@ -560,7 +627,7 @@ strong {
 
 .leadership-image {
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: 6px;
     box-shadow: var(--sombra);
 }
 
@@ -574,9 +641,9 @@ strong {
     gap: 10px;
 
     background-color: var(--areia);
-    border: 1px dashed rgba(82, 115, 90, 0.5);
+    border: 1px dashed rgba(107, 63, 38, 0.4);
 
-    color: var(--verde-folha);
+    color: var(--marrom);
 }
 
 .leadership-image-placeholder i {
@@ -592,9 +659,23 @@ strong {
 }
 
 .leadership-role {
-    color: var(--dourado) !important;
+    position: relative;
+    padding-left: 18px;
+    color: var(--marrom) !important;
+    font-family: "Fraunces", serif;
+    font-style: italic;
     font-size: 1.1rem;
-    font-weight: 800;
+    font-weight: 600;
+}
+
+.leadership-role::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 10px;
+    height: 1px;
+    background-color: var(--dourado);
 }
 
 .leadership-content p {
@@ -616,16 +697,17 @@ strong {
 }
 
 .gallery-filter {
-    padding: 9px 20px;
+    padding: 9px 22px;
 
-    border: 1px solid rgba(36, 72, 58, 0.2);
-    border-radius: 50px;
+    border: 1px solid rgba(42, 32, 25, 0.2);
+    border-radius: 3px;
 
     background-color: transparent;
-    color: var(--verde-mata);
+    color: var(--marrom-escuro);
 
     font-family: "Nunito", sans-serif;
     font-weight: 700;
+    font-size: 0.92rem;
 
     cursor: pointer;
     transition: var(--transicao);
@@ -633,8 +715,8 @@ strong {
 
 .gallery-filter:hover,
 .gallery-filter.active {
-    background-color: var(--verde-mata);
-    border-color: var(--verde-mata);
+    background-color: var(--marrom-escuro);
+    border-color: var(--marrom-escuro);
     color: var(--branco);
 }
 
@@ -647,7 +729,9 @@ strong {
 }
 
 .gallery-placeholder {
+    position: relative;
     min-height: 280px;
+    overflow: hidden;
 
     display: flex;
     flex-direction: column;
@@ -656,17 +740,42 @@ strong {
     gap: 10px;
 
     background-color: var(--branco);
-    border: 1px dashed rgba(82, 115, 90, 0.5);
-    border-radius: 16px;
+    border: 1px solid rgba(42, 32, 25, 0.1);
+    border-radius: 4px;
 
-    color: var(--verde-folha);
+    color: var(--marrom);
 
-    transition: var(--transicao);
+    transition: box-shadow var(--transicao);
+}
+
+.gallery-placeholder::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: border-color var(--transicao);
+    pointer-events: none;
 }
 
 .gallery-placeholder:hover {
-    transform: translateY(-5px);
     box-shadow: var(--sombra);
+}
+
+.gallery-placeholder:hover::after {
+    border-color: var(--dourado);
+}
+
+.gallery-placeholder img {
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-placeholder:hover img {
+    transform: scale(1.05);
 }
 
 .gallery-placeholder i {
@@ -689,8 +798,8 @@ strong {
 
     overflow: hidden;
 
-    border: 1px solid rgba(36, 72, 58, 0.1);
-    border-radius: 12px !important;
+    border: 1px solid rgba(42, 32, 25, 0.12);
+    border-radius: 4px !important;
 
     background-color: var(--branco);
 }
@@ -699,7 +808,7 @@ strong {
     padding: 20px 22px;
 
     background-color: var(--branco);
-    color: var(--verde-mata);
+    color: var(--marrom-escuro);
 
     font-family: "Nunito", sans-serif;
     font-weight: 800;
@@ -707,9 +816,18 @@ strong {
     box-shadow: none;
 }
 
+.accordion-custom .accordion-button::after {
+    filter: sepia(60%) saturate(400%) hue-rotate(-10deg) brightness(0.9);
+}
+
 .accordion-custom .accordion-button:not(.collapsed) {
-    background-color: var(--verde-mata);
-    color: var(--branco);
+    background-color: var(--marrom-escuro);
+    color: var(--dourado-claro);
+    box-shadow: inset 0 -1px 0 var(--dourado);
+}
+
+.accordion-custom .accordion-button:not(.collapsed)::after {
+    filter: brightness(0) invert(1);
 }
 
 .accordion-custom .accordion-button:focus {
@@ -717,9 +835,10 @@ strong {
 }
 
 .accordion-custom .accordion-body {
-    padding: 20px 22px;
+    padding: 22px 22px 24px;
     color: var(--cinza);
     background-color: var(--off-white);
+    border-top: 1px solid rgba(42, 32, 25, 0.08);
 }
 
 
@@ -728,35 +847,30 @@ strong {
 ================================================== */
 
 .charity-section {
-    padding: 90px 0;
-
-    background:
-        linear-gradient(
-            rgba(24, 55, 44, 0.96),
-            rgba(36, 72, 58, 0.96)
-        );
+    padding: 95px 0;
+    background: linear-gradient(165deg, var(--marrom-escuro) 0%, var(--preto) 100%);
 }
 
 .charity-content {
     max-width: 750px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .charity-icon {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto 25px;
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 26px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     border-radius: 50%;
+    border: 1px solid var(--dourado-claro);
 
-    background-color: rgba(209, 180, 119, 0.12);
     color: var(--dourado-claro);
-
-    font-size: 1.7rem;
+    font-size: 1.55rem;
 }
 
 .charity-content h2 {
@@ -766,7 +880,7 @@ strong {
 
 .charity-content p {
     margin-bottom: 0;
-    color: rgba(255, 255, 255, 0.82);
+    color: rgba(255, 255, 255, 0.78);
 }
 
 
@@ -778,25 +892,25 @@ strong {
     display: block;
     height: 100%;
 
-    padding: 35px 25px;
+    padding: 36px 26px;
 
     text-align: center;
 
-    background-color: rgba(255, 255, 255, 0.07);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 18px;
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(226, 192, 119, 0.2);
+    border-radius: 4px;
 
-    transition: var(--transicao);
+    transition: border-color var(--transicao), background-color var(--transicao);
 }
 
 .contact-card:hover {
-    transform: translateY(-7px);
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: var(--dourado-claro);
 }
 
 .contact-icon {
-    width: 65px;
-    height: 65px;
+    width: 60px;
+    height: 60px;
     margin: 0 auto 20px;
 
     display: flex;
@@ -804,11 +918,11 @@ strong {
     justify-content: center;
 
     border-radius: 50%;
+    border: 1px solid var(--dourado-claro);
 
-    background-color: rgba(209, 180, 119, 0.12);
     color: var(--dourado-claro);
 
-    font-size: 1.6rem;
+    font-size: 1.5rem;
 }
 
 .contact-card h3 {
@@ -819,7 +933,7 @@ strong {
 .contact-card p {
     min-height: 50px;
     margin-bottom: 15px;
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .contact-card span {
@@ -830,6 +944,12 @@ strong {
 
 .contact-card span i {
     margin-left: 5px;
+    transition: transform var(--transicao);
+    display: inline-block;
+}
+
+.contact-card:hover span i {
+    transform: translateX(4px);
 }
 
 
@@ -839,7 +959,7 @@ strong {
 
 .map-container {
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: 6px;
 }
 
 .map-placeholder {
@@ -854,8 +974,8 @@ strong {
 
     text-align: center;
 
-    background-color: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(226, 192, 119, 0.2);
 }
 
 .map-placeholder i {
@@ -872,7 +992,7 @@ strong {
 .map-placeholder p {
     max-width: 550px;
     margin-bottom: 25px;
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 
@@ -882,29 +1002,32 @@ strong {
 
 .footer {
     padding: 70px 0 25px;
-    background-color: #162F26;
+    background-color: var(--preto);
     color: var(--branco);
 }
 
 .footer-brand h2 {
     margin-bottom: 15px;
     color: var(--branco);
-    font-size: 1.6rem;
+    font-size: 1.55rem;
 }
 
 .footer-brand h2 span {
     color: var(--dourado-claro);
+    font-style: italic;
 }
 
 .footer-brand p {
     max-width: 450px;
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(255, 255, 255, 0.55);
 }
 
 .footer h3 {
     margin-bottom: 20px;
-    color: var(--branco);
-    font-size: 1.1rem;
+    color: var(--dourado-claro);
+    font-size: 1.05rem;
+    font-family: "Nunito", sans-serif;
+    font-weight: 800;
 }
 
 .footer-links {
@@ -918,7 +1041,7 @@ strong {
 }
 
 .footer-links a {
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(255, 255, 255, 0.6);
     transition: var(--transicao);
 }
 
@@ -934,14 +1057,14 @@ strong {
 }
 
 .social-link {
-    width: 45px;
-    height: 45px;
+    width: 44px;
+    height: 44px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 50%;
 
     color: var(--branco);
@@ -952,7 +1075,7 @@ strong {
 .social-link:hover {
     background-color: var(--dourado);
     border-color: var(--dourado);
-    color: var(--branco);
+    color: var(--preto);
     transform: translateY(-3px);
 }
 
@@ -969,7 +1092,7 @@ strong {
 
 .footer-bottom p {
     margin: 0;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.45);
     font-size: 0.85rem;
 }
 
@@ -1002,7 +1125,7 @@ strong {
 
     font-size: 1.7rem;
 
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 22px rgba(23, 16, 9, 0.35);
 
     z-index: 999;
 
@@ -1031,11 +1154,11 @@ strong {
     align-items: center;
     justify-content: center;
 
-    border: 0;
+    border: 1px solid var(--dourado);
     border-radius: 50%;
 
-    background-color: var(--dourado);
-    color: var(--branco);
+    background-color: var(--marrom-escuro);
+    color: var(--dourado-claro);
 
     cursor: pointer;
 
@@ -1056,8 +1179,8 @@ strong {
 }
 
 .back-to-top:hover {
-    background-color: var(--dourado-claro);
-    color: var(--grafite);
+    background-color: var(--dourado);
+    color: var(--marrom-escuro);
 }
 
 
@@ -1068,7 +1191,7 @@ strong {
 @media (max-width: 991px) {
 
     #navbar {
-        background-color: rgba(24, 55, 44, 0.97);
+        background-color: rgba(23, 16, 9, 0.96);
     }
 
     .navbar-nav {
@@ -1117,6 +1240,14 @@ strong {
         text-align: center;
     }
 
+    .hero-subtitle {
+        padding-left: 0;
+    }
+
+    .hero-subtitle::before {
+        display: none;
+    }
+
     .hero p {
         margin-left: auto;
         margin-right: auto;
@@ -1142,7 +1273,8 @@ strong {
         min-height: 350px;
     }
 
-    .gallery-placeholder {
+    .gallery-placeholder,
+    .gallery-placeholder img {
         min-height: 240px;
     }
 
@@ -1157,17 +1289,16 @@ strong {
 
     .navbar-brand {
         max-width: 220px;
-        font-size: 1rem;
+        font-size: 1.05rem;
         line-height: 1.3;
     }
 
     .hero h1 {
-        font-size: 2.4rem;
+        font-size: 2.3rem;
     }
 
     .hero-subtitle {
-        font-size: 0.8rem;
-        letter-spacing: 1.5px;
+        font-size: 0.85rem;
     }
 
     .hero-buttons {
@@ -1177,6 +1308,7 @@ strong {
 
     .hero-buttons .btn {
         width: 100%;
+        text-align: center;
     }
 
     .section {
