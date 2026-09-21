@@ -985,40 +985,23 @@ strong {
 
 .map-container {
     overflow: hidden;
+    border: 1px solid rgba(226, 192, 119, 0.35);
     border-radius: 6px;
+    box-shadow: var(--sombra);
+    background-color: var(--verde-mata);
 }
 
-.map-placeholder {
-    min-height: 350px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    padding: 40px;
-
-    text-align: center;
-
-    background-color: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(226, 192, 119, 0.2);
+.map-container iframe {
+    display: block;
+    width: 100%;
+    height: 450px;
+    border: 0;
 }
 
-.map-placeholder i {
-    margin-bottom: 15px;
-    color: var(--dourado-claro);
-    font-size: 3rem;
-}
-
-.map-placeholder h3 {
-    margin-bottom: 10px;
-    color: var(--branco);
-}
-
-.map-placeholder p {
-    max-width: 550px;
-    margin-bottom: 25px;
-    color: rgba(255, 255, 255, 0.7);
+@media (max-width: 575.98px) {
+    .map-container iframe {
+        height: 380px;
+    }
 }
 
 
