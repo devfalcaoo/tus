@@ -713,99 +713,83 @@ strong {
    GALERIA
 ================================================== */
 
-.gallery-filters {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
+.gallery-carousel {
+    max-width: 960px;
+    margin: 0 auto;
 
-    margin-bottom: 40px;
-}
-
-.gallery-filter {
-    padding: 9px 22px;
-
-    border: 1px solid rgba(42, 32, 25, 0.2);
-    border-radius: 3px;
-
-    background-color: transparent;
-    color: var(--marrom-escuro);
-
-    font-family: "Nunito", sans-serif;
-    font-weight: 700;
-    font-size: 0.92rem;
-
-    cursor: pointer;
-    transition: var(--transicao);
-}
-
-.gallery-filter:hover,
-.gallery-filter.active {
-    background-color: var(--marrom-escuro);
-    border-color: var(--marrom-escuro);
-    color: var(--branco);
-}
-
-.gallery-item {
-    transition: var(--transicao);
-}
-
-.gallery-item.hidden {
-    display: none;
-}
-
-.gallery-placeholder {
-    position: relative;
-    min-height: 280px;
     overflow: hidden;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-
-    background-color: var(--branco);
+    background-color: var(--preto);
     border: 1px solid rgba(42, 32, 25, 0.1);
     border-radius: 4px;
 
-    color: var(--marrom);
-
-    transition: box-shadow var(--transicao);
-}
-
-.gallery-placeholder::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    transition: border-color var(--transicao);
-    pointer-events: none;
-}
-
-.gallery-placeholder:hover {
     box-shadow: var(--sombra);
 }
 
-.gallery-placeholder:hover::after {
-    border-color: var(--dourado);
-}
-
-.gallery-placeholder img {
-    width: 100%;
-    height: 100%;
-    min-height: 280px;
+.gallery-carousel .carousel-item img {
+    height: 540px;
     object-fit: cover;
-    transition: transform 0.5s ease;
 }
 
-.gallery-placeholder:hover img {
-    transform: scale(1.05);
+/* legenda sobre a imagem */
+.gallery-carousel .carousel-caption {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 60px 20px 52px;
+
+    background: linear-gradient(to top, rgba(23, 16, 9, 0.75), transparent);
 }
 
-.gallery-placeholder i {
-    font-size: 2.5rem;
+.gallery-tag {
+    display: inline-block;
+    padding: 5px 16px;
+
+    border: 1px solid var(--dourado);
+    border-radius: 3px;
+
+    color: var(--dourado-claro);
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+/* indicadores em dourado */
+.gallery-carousel .carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background-color: var(--dourado-claro);
+}
+
+/* setas */
+.gallery-carousel .carousel-control-prev,
+.gallery-carousel .carousel-control-next {
+    width: 12%;
+    opacity: 0.85;
+}
+
+.gallery-carousel .carousel-control-prev-icon,
+.gallery-carousel .carousel-control-next-icon {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 50%;
+    background-color: rgba(23, 16, 9, 0.55);
+    background-size: 45%;
+
+    transition: background-color var(--transicao);
+}
+
+.gallery-carousel .carousel-control-prev:hover .carousel-control-prev-icon,
+.gallery-carousel .carousel-control-next:hover .carousel-control-next-icon {
+    background-color: var(--dourado);
 }
 
 
@@ -985,23 +969,15 @@ strong {
 
 .map-container {
     overflow: hidden;
-    border: 1px solid rgba(226, 192, 119, 0.35);
     border-radius: 6px;
-    box-shadow: var(--sombra);
-    background-color: var(--verde-mata);
+    min-height: 350px;
 }
 
 .map-container iframe {
     display: block;
     width: 100%;
-    height: 450px;
+    min-height: 350px;
     border: 0;
-}
-
-@media (max-width: 575.98px) {
-    .map-container iframe {
-        height: 380px;
-    }
 }
 
 
@@ -1301,9 +1277,8 @@ strong {
         min-height: 350px;
     }
 
-    .gallery-placeholder,
-    .gallery-placeholder img {
-        min-height: 240px;
+    .gallery-carousel .carousel-item img {
+        height: 400px;
     }
 
     .footer-bottom {
@@ -1343,13 +1318,18 @@ strong {
         padding: 60px 0;
     }
 
-    .gallery-filters {
-        gap: 7px;
+    .gallery-carousel .carousel-item img {
+        height: 280px;
     }
 
-    .gallery-filter {
-        padding: 8px 15px;
-        font-size: 0.85rem;
+    .gallery-carousel .carousel-caption {
+        padding: 40px 12px 40px;
+    }
+
+    .gallery-carousel .carousel-control-prev-icon,
+    .gallery-carousel .carousel-control-next-icon {
+        width: 36px;
+        height: 36px;
     }
 
     .whatsapp-float {

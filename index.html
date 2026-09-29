@@ -737,137 +737,146 @@
                 </div>
 
 
-                <!-- Filtros -->
+                <!-- Slide da galeria (Bootstrap Carousel) -->
 
-                <div class="gallery-filters">
+                <div
+                    id="galleryCarousel"
+                    class="carousel slide carousel-fade gallery-carousel"
+                    data-bs-ride="carousel"
+                    data-bs-interval="5000"
+                    aria-label="Galeria de fotos"
+                >
+
+                    <!-- Indicadores -->
+
+                    <div class="carousel-indicators">
+
+                        <button
+                            type="button"
+                            data-bs-target="#galleryCarousel"
+                            data-bs-slide-to="0"
+                            class="active"
+                            aria-current="true"
+                            aria-label="Foto 1"
+                        ></button>
+
+                        <button
+                            type="button"
+                            data-bs-target="#galleryCarousel"
+                            data-bs-slide-to="1"
+                            aria-label="Foto 2"
+                        ></button>
+
+                        <button
+                            type="button"
+                            data-bs-target="#galleryCarousel"
+                            data-bs-slide-to="2"
+                            aria-label="Foto 3"
+                        ></button>
+
+                        <button
+                            type="button"
+                            data-bs-target="#galleryCarousel"
+                            data-bs-slide-to="3"
+                            aria-label="Foto 4"
+                        ></button>
+
+                        <button
+                            type="button"
+                            data-bs-target="#galleryCarousel"
+                            data-bs-slide-to="4"
+                            aria-label="Foto 5"
+                        ></button>
+
+                        <button
+                            type="button"
+                            data-bs-target="#galleryCarousel"
+                            data-bs-slide-to="5"
+                            aria-label="Foto 6"
+                        ></button>
+
+                    </div>
+
+
+                    <!-- Slides -->
+
+                    <div class="carousel-inner">
+
+                        <!-- Slide 1 -->
+
+                        <div class="carousel-item active">
+                            <img src="./image/1.jpeg" class="d-block w-100" alt="Oferenda de São Cosme e Damião">
+                            <div class="carousel-caption">
+                                <span class="gallery-tag">Oferenda de São Cosme e Damião</span>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+
+                        <div class="carousel-item">
+                            <img src="./image/2.jpeg" class="d-block w-100" alt="Oferenda de São Cosme e Damião">
+                            <div class="carousel-caption">
+                                <span class="gallery-tag">Oferenda de São Cosme e Damião</span>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+
+                        <div class="carousel-item">
+                            <img src="./image/3.jpeg" class="d-block w-100" alt="Nossos Ogãs">
+                            <div class="carousel-caption">
+                                <span class="gallery-tag">Nossos Ogãs</span>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4 -->
+
+                        <div class="carousel-item">
+                            <img src="./image/4.jpeg" class="d-block w-100" alt="Filhos">
+                        </div>
+
+                        <!-- Slide 5 -->
+
+                        <div class="carousel-item">
+                            <img src="./image/5.jpeg" class="d-block w-100" alt="Festa de dona 7 Saias">
+                            <div class="carousel-caption">
+                                <span class="gallery-tag">Festa de dona 7 Saias</span>
+                            </div>
+                        </div>
+
+                        <!-- Slide 6 -->
+
+                        <div class="carousel-item">
+                            <img src="./image/6.jpeg" class="d-block w-100" alt="Festa de dona 7 Saias">
+                            <div class="carousel-caption">
+                                <span class="gallery-tag">Festa de dona 7 Saias</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Controles -->
 
                     <button
-                        class="gallery-filter active"
-                        data-filter="todos"
+                        class="carousel-control-prev"
                         type="button"
+                        data-bs-target="#galleryCarousel"
+                        data-bs-slide="prev"
                     >
-                        Todos
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
                     </button>
-
 
                     <button
-                        class="gallery-filter"
-                        data-filter="casa"
+                        class="carousel-control-next"
                         type="button"
+                        data-bs-target="#galleryCarousel"
+                        data-bs-slide="next"
                     >
-                        Nossa Casa
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Próximo</span>
                     </button>
-
-
-                    <button
-                        class="gallery-filter"
-                        data-filter="eventos"
-                        type="button"
-                    >
-                        Eventos
-                    </button>
-
-                </div>
-
-
-                <!-- Galeria -->
-
-                <div class="row g-4 gallery-grid">
-
-                    <!-- Imagem 1 -->
-
-                    <div
-                        class="col-sm-6 col-lg-4 gallery-column gallery-item"
-                        data-category="casa"
-                    >
-
-                        <div class="gallery-placeholder">
-
-                            <img src="./image/ciganos.png" alt="nossa casa">
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Imagem 2 -->
-
-                    <div
-                        class="col-sm-6 col-lg-4 gallery-column gallery-item"
-                        data-category="casa"
-                    >
-
-                        <div class="gallery-placeholder">
-
-                            <img src="./image/ciganos.png" alt="nossa casa">
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Imagem 3 -->
-
-                    <div
-                        class="col-sm-6 col-lg-4 gallery-column gallery-item"
-                        data-category="eventos"
-                    >
-
-                        <div class="gallery-placeholder">
-
-                            <img src="./image/ciganos2.png" alt="evento">
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Imagem 4 -->
-
-                    <div
-                        class="col-sm-6 col-lg-4 gallery-column gallery-item"
-                        data-category="eventos"
-                    >
-
-                        <div class="gallery-placeholder">
-
-                            <img src="./image/ciganos2.png" alt="evento">
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Imagem 5 -->
-
-                    <div
-                        class="col-sm-6 col-lg-4 gallery-column gallery-item"
-                        data-category="casa"
-                    >
-
-                        <div class="gallery-placeholder">
-
-                            <img src="./image/ciganos.png" alt="nossa casa">
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Imagem 6 -->
-
-                    <div
-                        class="col-sm-6 col-lg-4 gallery-column gallery-item"
-                        data-category="eventos"
-                    >
-
-                        <div class="gallery-placeholder">
-
-                            <img src="./image/ciganos2.png" alt="evento">
-
-                        </div>
-
-                    </div>
 
                 </div>
 
@@ -1340,7 +1349,7 @@
                     <div class="col-md-4">
 
                         <a
-                            href="https://maps.app.goo.gl/aWqUbwoqm9MyDL6XA"
+                            href="https://maps.app.goo.gl/eoMrS9YVgzDSVzxn6"
                             target="_blank"
                             rel="noopener noreferrer"
                             class="contact-card"
@@ -1379,16 +1388,7 @@
 
                 <div class="map-container mt-5">
 
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3981.275618582248!2d-38.470993!3d-3.7500427!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c747004a0f00f5%3A0x125583a2e5cc43bd!2sTUS%20Caboclo%20Samambaia%20e%20Cigano%20Pablo!5e0!3m2!1spt-BR!2sbr!4v1789990881412!5m2!1spt-BR!2sbr"
-                        width="600"
-                        height="450"
-                        title="Localização da TUS Caboclo Samambaia e Cigano Pablo"
-                        style="border:0;"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="strict-origin-when-cross-origin"
-                    ></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.2756183851325!2d-38.47099302633179!3d-3.7500427432798986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c747004a0f00f5%3A0x125583a2e5cc43bd!2sTUS%20Caboclo%20Samambaia%20e%20Cigano%20Pablo!5e0!3m2!1spt-BR!2sbr!4v1790692129798!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 
                 </div>
 
